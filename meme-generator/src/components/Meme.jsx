@@ -1,10 +1,13 @@
+import memesData from "../memesData";
+
 function Meme() {
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("You clicked submit.");
+  function getMeme() {
+    const memes = memesData.data.memes;
+    const randomMeme = memes[Math.floor(Math.random() * memes.length)];
+    console.log(randomMeme.url);
   }
   return (
-    <form className="meme-form" onSubmit={handleSubmit}>
+    <div className="meme-form">
       <input
         type="text"
         id="top-text"
@@ -17,8 +20,10 @@ function Meme() {
         placeholder="Bottom Text"
         className="meme-inputs"
       />
-      <button type="submit">Generate meme image!</button>
-    </form>
+      <button className="meme-btn" onClick={getMeme}>
+        Generate meme image 🖼️
+      </button>
+    </div>
   );
 }
 
