@@ -15,8 +15,8 @@
 }
 
 body {
-  font-family: "Karla", sans-serif;
   margin: 0;
+  font-family: "Karla", sans-serif;
 }
 
 .App {
@@ -37,4 +37,28 @@ body {
   background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
   color: white;
   padding: 20px;
+  font-size: 18px;
+}
+
+.meme-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  width: 540px;
+  padding-top: 25px;
+}
+
+.meme-inputs {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+}
+
+button {
+  grid-area: 2 / 1 / 2 / 4;
+
+  width: 100%;
 }
