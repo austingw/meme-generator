@@ -10,23 +10,25 @@ function Meme() {
     setMeme(randomMeme.url);
   }
   return (
-    <div className="meme-form">
-      <input
-        type="text"
-        id="top-text"
-        placeholder="Top Text"
-        className="meme-inputs"
-      />
-      <input
-        type="text"
-        id="bottom-text"
-        placeholder="Bottom Text"
-        className="meme-inputs"
-      />
-      <button className="meme-btn" onClick={getMeme}>
-        Generate meme image 🖼️
-      </button>
-      <img src={memeUrl}></img>
+    <div className="meme-container">
+      <div className="meme-form">
+        <input
+          type="text"
+          id="top-text"
+          placeholder="Top Text"
+          className="meme-inputs"
+        />
+        <input
+          type="text"
+          id="bottom-text"
+          placeholder="Bottom Text"
+          className="meme-inputs"
+        />
+        <button className="meme-btn" onClick={getMeme}>
+          Generate meme image 🖼️
+        </button>
+      </div>
+      <img src={memeUrl} className="meme-img"></img>
     </div>
   );
 }
