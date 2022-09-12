@@ -37,7 +37,11 @@ function Meme() {
           Generate meme image 🖼️
         </button>
       </div>
-      <img src={meme.randomImg} className="meme-img"></img>
+      <div className="meme">
+        <img src={meme.randomImg} className="meme-img" />
+        <h2 className="meme-text top">One does not simply</h2>
+        <h2 className="meme-text bottom">Walk into Mordor</h2>
+      </div>
     </div>
   );
 }
