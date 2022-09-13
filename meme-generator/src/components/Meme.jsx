@@ -1,16 +1,15 @@
 import React from "react";
-import memesData from "../memesData";
 
 function Meme() {
   const [meme, setMeme] = React.useState({
-    topText: "One does not simply",
-    bottomText: "Walk into Mordor",
+    topText: "",
+    bottomText: "",
     randomImg: "http://i.imgflip.com/1bij.jpg",
   });
-  const [allMemeImg, setAllMemeImg] = React.useState(memesData);
+  const [allMeme, setAllMeme] = React.useState("");
 
   function getMeme() {
-    const memes = allMemeImg.data.memes;
+    const memes = allMeme;
     const randomMeme = memes[Math.floor(Math.random() * memes.length)];
     const url = randomMeme.url;
     setMeme((prevMeme) => ({
@@ -29,6 +28,13 @@ function Meme() {
     });
     console.log(meme);
   }
+
+  React.useEffect(function () {
+    console.log("Effect ran");
+    fetch(`https://api.imgflip.com/get_memes`)
+      .then((res) => res.json())
+      .then((obj) => setAllMeme(obj.data.memes));
+  }, []);
 
   return (
     <div className="meme-container">
